@@ -30,3 +30,11 @@ int main() {
                                   // los ya existentes se reubican según noexcept
     }
 }
+
+/*
+# MOVE noexcept -> el vector mueve al reasignar
+g++ -std=c++17 -O0 -DNOEXCEPT=noexcept demo.cpp -o demo && ./demo
+
+# MOVE SIN noexcept -> el vector COPIA al reasignar (aunque haya unique_ptr)
+g++ -std=c++17 -O0 -DNOEXCEPT= demo.cpp -o demo && ./demo
+*/
