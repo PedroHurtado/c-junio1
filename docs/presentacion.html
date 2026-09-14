@@ -6,9 +6,10 @@
 <meta content="Asciidoctor 1.5.3" name="generator">
 <meta content="Javier Gómez Santos" name="author">
 <title>Lenguaje C++</title>
-<link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/styles/solarized_dark.min.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad()</script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>if(window.hljs){hljs.highlightAll();}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
 <link href="deck.js/core/deck.core.css" rel="stylesheet">
 <link href="deck.js/extensions/scale/deck.scale.css" media="screen" rel="stylesheet">
 <link href="deck.js/extensions/goto/deck.goto.css" media="screen" rel="stylesheet">
@@ -18,6 +19,7 @@
 <link href="deck.js/extensions/toc/deck.toc.css" media="screen" rel="stylesheet">
 <link href="deck.js/themes/style/web-2.0.css" media="screen" rel="stylesheet">
 <link href="deck.js/themes/transition/horizontal-slide.css" media="screen" rel="stylesheet">
+<link href="theme-custom.css" media="screen" rel="stylesheet">
 <link href="deck.js/core/print.css" media="print" rel="stylesheet">
 <script src="deck.js/modernizr.custom.js"></script>
 </head>
@@ -243,9 +245,6 @@ Usando el compilador del sistema
 <li>
 Instalando un IDE de desarrollo
 </li>
-<li>
-Abrocharse el cinturón, ¡que empezamos!
-</li>
 </ol>
 </div>
 </section>
@@ -323,92 +322,6 @@ Hola Mundo</code></pre>
 <li><strong>eclipse</strong>, que no trae soporte por defecto para C++, pero se puede añadir mediante plugins</li>
 <li><strong>Visual Studio</strong> (Windows), dependiendo del espacio disponible, se puede optar por la versión <strong>Express</strong> o la <strong>Community</strong></li>
 </ul>
-</div>
-<div style="page-break-after: always"></div>
-<div class="paragraph"><p>En este curso vamos a trabajar con la <strong>Visual Studio Community 2015</strong>, y como dicho IDE da soporte a varios lenguajes, es importante marcar que vamos a desarrollar en dicho lenguaje (y si queremos, podemos añadir hasta soporte para programar aplicaciones para dispositivos móviles)</p></div>
-<div class="imageblock" style="text-align: text-left; float: left">
-<div class="content">
-<img alt="VS2015CommunityCustom" src="images/pics/VS2015CommunityCustom.jpg">
-</div>
-<div class="title">Figure 6. Instalación 1</div>
-</div>
-<div class="imageblock" style="text-align: text-left; float: left">
-<div class="content">
-<img alt="VS2015CommunityLangs" src="images/pics/VS2015CommunityLangs.jpg">
-</div>
-<div class="title">Figure 7. Instalación 2</div>
-</div>
-</section>
-<section class="slide" id="_abrocharse_el_cinturón_que_empezamos">
-<h2>Abrocharse el cinturón, ¡que empezamos!</h2>
-<div class="paragraph"><p>Vamos a comenzar a trabajar con Visual Studio.</p></div>
-<div class="paragraph"><p>Lo primero que vamos a hacer es arrancar Visual Studio, y crear un nuevo proyecto</p></div>
-<div class="imageblock" style="text-align: text-left; float: center">
-<div class="content">
-<img alt="np 01" src="images/pics/np_01.PNG">
-</div>
-<div class="title">Figure 8. Nuevo Proyecto</div>
-</div>
-<div class="paragraph"><p>Ahora, elegimos <strong>Visual C++</strong> &#8594; <strong>Win32</strong> y <strong>New Console Application</strong></p></div>
-<div style="page-break-after: always"></div>
-<div class="paragraph"><p>Nombramos nuestro proyecto y pulsamos <strong>OK</strong></p></div>
-<div class="imageblock" style="text-align: text-left; float: center">
-<div class="content">
-<img alt="np 02" src="images/pics/np_02.PNG">
-</div>
-<div class="title">Figure 9. Datos de Nuevo Proyecto</div>
-</div>
-<div style="page-break-after: always"></div>
-<div class="paragraph"><p>Por motivos de compatibilidad, vamos a desmarcar <strong>Precompiled header</strong> y pulsamos en <strong>Finish</strong></p></div>
-<div class="imageblock" style="text-align: text-left; float: center">
-<div class="content">
-<img alt="np 03" src="images/pics/np_03.PNG">
-</div>
-<div class="title">Figure 10. Application Wizard para crear el proyecto</div>
-</div>
-<div style="page-break-after: always"></div>
-<div class="paragraph"><p>Reemplazamos el código auto-generado por el usado en el ejemplo anterior, y guardamos</p></div>
-<div class="imageblock" style="text-align: text-left; float: center">
-<div class="content">
-<img alt="np 04" src="images/pics/np_04.PNG">
-</div>
-<div class="title">Figure 11. Application Wizard para crear el proyecto</div>
-</div>
-<div style="page-break-after: always"></div>
-<div class="paragraph"><p>Ahora, vamos a compilar y probar nuestro código</p></div>
-<div class="ulist">
-<ul>
-<li>Para compilar nuestro código, en el menú <strong>Build</strong> &#8594; <strong>Build Solution</strong> (o Ctrl+Shift+B)</li>
-</ul>
-</div>
-<div class="imageblock" style="text-align: text-left; float: center">
-<div class="content">
-<img alt="np 05" src="images/pics/np_05.PNG">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>Para ejecutar nuestro programa, en el menú <strong>Debug</strong> &#8594; <strong>Start Debugging</strong> (F5) o <strong>Debug</strong> &#8594; <strong>Start Without Debugging</strong> (Ctrl+F5)</li>
-</ul>
-</div>
-<div class="imageblock" style="text-align: text-left; float: center">
-<div class="content">
-<img alt="np 06" src="images/pics/np_06.PNG">
-</div>
-</div>
-<div style="page-break-after: always"></div>
-<div class="paragraph"><p>Por último, vamos a tener en cuenta las <strong>Build Configuration</strong>, o lo que es lo mismo, si vamos a compilar nuestro programa como versión <strong>Debug</strong> (sobre la que podremos realizar seguimiento paso a paso de nuestro software), o como versión <strong>Release</strong>.
-Evidentemente la versión <strong>Release</strong> es mucho más eficiente</p></div>
-<div class="imageblock" style="text-align: text-left; float: center">
-<div class="content">
-<img alt="np 07" src="images/pics/np_07.PNG">
-</div>
-</div>
-<div class="paragraph"><p>También tenemos la opción de compilar para arquitectura <strong>x86</strong> o <strong>x64</strong></p></div>
-<div class="imageblock" style="text-align: text-left; float: center">
-<div class="content">
-<img alt="np 08" src="images/pics/np_08.PNG">
-</div>
 </div>
 </section>
 <section class="slide" id="_3_bases_del_lenguaje_c_variables_operadores_tipos">
@@ -2688,14 +2601,89 @@ int main() {
 <li>
 La lista enlazada
 </li>
+<li>
+Nodo genérico: API a implementar
+</li>
+<li>
+Propiedad de los nodos y prueba
+</li>
 </ol>
 </div>
 </section>
 <section class="slide" id="_la_lista_enlazada">
 <h2>La lista enlazada</h2>
+<div class="paragraph"><p>Vamos a construir nuestra propia estructura enlazada y a probarla. El punto de partida y la solución de referencia están en <strong>ejercicios/03-lista.cpp</strong>.</p></div>
 <div class="ulist">
 <ul>
-<li>Realizar la práctica de creación de una lista enlazada, y su prueba (descrito en documento word)</li>
+<li><strong>Paso 1 - lista enlazada simple:</strong> un <strong>nodo</strong> que guarda un valor y un puntero al <strong>siguiente</strong>. Implementa insertar al final, buscar, borrar un elemento y recorrer la lista mostrando los valores. Reserva con <strong>new</strong> y libera con <strong>delete</strong>: cada nodo que creas es tuyo y hay que destruirlo.</li>
+<li><strong>Paso 2 - hazla genérica:</strong> convierte el nodo en una <strong>plantilla</strong> <strong>Node&lt;T&gt;</strong> para que sirva con cualquier tipo (int, std::string, una clase tuya&#8230;).</li>
+<li><strong>Paso 3 - de lista a árbol:</strong> en lugar de un único <strong>siguiente</strong>, cada nodo guarda <strong>varios hijos</strong> y un puntero a su <strong>padre</strong>. Los hijos se guardan en un <strong>std::vector&lt;std::unique_ptr&lt;Node&gt;&gt;</strong>: el padre es el <strong>propietario</strong> y el puntero <strong>parent</strong> es una simple referencia (no posee nada, evita el ciclo).</li>
+<li><strong>Paso 4 - prueba:</strong> crea un nodo raíz, añade hijos y nietos, elimina un nodo intermedio y comprueba que sus descendientes desaparecen con él.</li>
+</ul>
+</div>
+</section>
+<section class="slide" id="_la_lista_enlazada_api">
+<h2>Nodo genérico: API a implementar</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="C++ language-C++">template &lt;typename T&gt;
+class Node {
+public:
+    T value;
+    Node* parent = nullptr;                          // enlace hacia arriba (NO es propietario)
+    std::vector&lt;std::unique_ptr&lt;Node&gt;&gt; children;     // el padre es dueño de sus hijos
+
+    explicit Node(T value) : value(std::move(value)) {}
+
+    Node* addChild(T childValue);                    // crea el hijo y devuelve un puntero a él
+    void  addChild(std::unique_ptr&lt;Node&gt; child);     // adopta un nodo ya construido
+    bool  removeChild(Node* child);                  // destruye ese hijo (y su subárbol)
+    void  remove();                                  // se elimina a sí mismo del padre
+};</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>Ojo con <strong>std::move</strong>: un <strong>unique_ptr</strong> no se copia, se <strong>transfiere</strong>.</p></div>
+</section>
+<section class="slide" id="_la_lista_enlazada_propiedad">
+<h2>Propiedad de los nodos y prueba</h2>
+<div class="listingblock">
+<div class="content">
+<pre class="ascii-diagram">                   +----------+
+                   |  Node 1  |   (root)  &lt;-- unique_ptr en main()
+                   | parent=0 |
+                   +----+-----+
+     children ---&gt;      |     vector&lt;unique_ptr&lt;Node&gt;&gt;  (el padre es el dueño)
+             +----------+----------+
+             |                     |
+       +-----v-----+         +-----v-----+
+       |  Node 2   |         |  Node 3   |     parent: puntero "crudo",
+       | parent=1  |         | parent=1  |     NO es propietario
+       +-----+-----+         +-----------+
+             |
+       +-----v-----+     Destruir un nodo destruye todo su subárbol
+       |  Node 4   |     (los unique_ptr se encadenan): sin delete
+       | parent=2  |
+       +-----------+</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="C++ language-C++">int main() {
+    auto root = std::make_unique&lt;Node&lt;int&gt;&gt;(1);
+    Node&lt;int&gt;* a = root-&gt;addChild(2);
+    Node&lt;int&gt;* b = root-&gt;addChild(3);
+    a-&gt;addChild(4);
+
+    b-&gt;remove();          // destruye b y todos sus descendientes
+    return 0;
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>Sólo hay <strong>un</strong> dueño de cada nodo: su padre. Al destruir el padre se destruye todo el subárbol, <strong>sin un solo delete</strong> escrito por nosotros (<strong>RAII</strong>).</li>
+<li><strong>remove()</strong> se apoya en <strong>parent-&gt;removeChild(this)</strong>: el nodo se borra a sí mismo del vector del padre&#8230; y en ese momento deja de existir. Cuidado con tocar <strong>this</strong> después.</li>
+<li>Compara esta versión con la del <strong>Paso 1</strong> (punteros crudos + delete): mismo comportamiento, muchas menos fugas de memoria.</li>
 </ul>
 </div>
 </section>

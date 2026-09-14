@@ -1,0 +1,285 @@
+/* =======================================================================
+   Tema personalizado del curso de C++  (se carga DESPUÉS de web-2.0.css)
+   Sólo aspecto: no cambia la estructura ni el contenido de las diapositivas
+   ======================================================================= */
+
+:root {
+  --cpp-blue:    #00599c;
+  --cpp-blue-dk: #003b6b;
+  --accent:      #0ea5e9;
+  --accent-warm: #f59e0b;
+  --ink:         #1f2a37;
+  --ink-soft:    #46556a;
+  --bg:          #f7f9fc;
+  --bg-2:        #e8eef6;
+  --card:        #ffffff;
+  --line:        #d8e1ec;
+  --code-bg:     #0f172a;
+  --code-fg:     #e6edf7;
+  --mono: "JetBrains Mono", "Cascadia Mono", Consolas, "SFMono-Regular", Menlo, monospace;
+  --sans: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Lienzo ---------- */
+.deck-container {
+  font-family: var(--sans);
+  font-size: 1.6em;
+  line-height: 1.45;
+  color: var(--ink);
+  font-variant-ligatures: none;
+  background: var(--bg);
+  background-image:
+    radial-gradient(1100px 620px at 12% -10%, #ffffff 0%, rgba(255,255,255,0) 60%),
+    linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+  background-attachment: fixed;
+  text-shadow: none;
+}
+
+.deck-container > .slide {
+  padding: 26px 64px 72px 64px;
+}
+
+/* ---------- Titulares ---------- */
+.deck-container h1,
+.deck-container h2,
+.deck-container h3,
+.deck-container h4,
+.deck-container h5,
+.deck-container h6 {
+  font-family: var(--sans);
+  letter-spacing: -0.02em;
+}
+
+#title-slide h1 {
+  color: var(--cpp-blue-dk);
+  font-size: 4.2em;
+  font-weight: 800;
+  line-height: 1.05;
+}
+#title-slide h1:after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 8px;
+  margin: 0.35em auto 0 auto;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--cpp-blue) 0%, var(--accent) 100%);
+}
+
+.deck-container h2 {
+  color: var(--cpp-blue-dk);
+  font-size: 1.95em;
+  font-weight: 750;
+  padding: 0 0 .28em 0;
+  margin: .1em 0 .7em 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  -webkit-box-reflect: none;
+}
+.cssreflections .deck-container h2,
+.cssreflections h2 { -webkit-box-reflect: unset !important; }
+.deck-container h2:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 130px;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--cpp-blue) 0%, var(--accent) 100%);
+}
+
+.deck-container h3 { color: var(--cpp-blue); font-size: 1.3em; font-weight: 700; }
+
+/* ---------- Texto ---------- */
+.deck-container p { color: var(--ink-soft); }
+.deck-container strong { color: var(--cpp-blue-dk); font-weight: 700; }
+.deck-container a, .deck-container a:visited { color: var(--cpp-blue); }
+.deck-container em { color: var(--ink); }
+
+::selection { background: var(--accent); color: #fff; }
+::-moz-selection { background: var(--accent); color: #fff; }
+
+/* ---------- Listas ---------- */
+.deck-container .ulist ul { list-style: none; margin-left: .6em; }
+.deck-container .ulist ul > li {
+  position: relative;
+  padding: .28em 0 .28em 1.5em;
+}
+.deck-container .ulist ul > li:before {
+  content: "";
+  position: absolute;
+  left: .25em;
+  top: .95em;
+  width: .42em;
+  height: .42em;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(14,165,233,.16);
+}
+.deck-container .ulist ul ul > li:before { background: var(--accent-warm); box-shadow: 0 0 0 3px rgba(245,158,11,.16); }
+
+/* Índices de cada tema: lista numerada como fichas */
+.deck-container .olist.arabic > ol {
+  list-style: none;
+  margin-left: 0;
+  counter-reset: idx;
+  display: block;
+}
+.deck-container .olist.arabic > ol > li {
+  counter-increment: idx;
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  border-radius: 10px;
+  padding: .5em .8em .5em 3.1em;
+  margin: 0 0 .45em 0;
+  box-shadow: 0 1px 2px rgba(15,23,42,.05);
+  color: var(--ink);
+}
+.deck-container .olist.arabic > ol > li:before {
+  content: counter(idx);
+  position: absolute;
+  left: .75em;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  border-radius: 50%;
+  font-size: .8em;
+  font-weight: 700;
+  color: #fff;
+  background: var(--cpp-blue);
+}
+
+/* ---------- Código ---------- */
+.deck-container pre,
+.deck-container pre.highlight {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  font-family: var(--mono);
+  font-size: .78em;
+  line-height: 1.45;
+  font-variant-ligatures: none;
+  border: 1px solid rgba(148,163,184,.25);
+  border-radius: 10px;
+  padding: .85em 1em;
+  box-shadow: 0 10px 24px rgba(15,23,42,.16);
+  overflow-x: auto;
+}
+.deck-container pre > code,
+.deck-container pre.highlight > code,
+.deck-container pre code.hljs,
+.deck-container pre .hljs {
+  background: transparent;
+  color: var(--code-fg);
+  font-family: var(--mono);
+  font-size: 1em;
+  line-height: 1.45;
+  text-shadow: none;
+  padding: 0;
+}
+/* neutraliza las "sombras de papel" del tema original */
+.csstransforms.boxshadow .deck-container pre:before,
+.csstransforms.boxshadow .deck-container pre:after,
+.csstransforms.boxshadow .deck-container pre > :first-child:before { content: none; box-shadow: none; }
+
+.deck-container p code,
+.deck-container li code {
+  font-family: var(--mono);
+  font-size: .82em;
+  color: var(--cpp-blue-dk);
+  background: #eaf2fb;
+  border: 1px solid #d3e3f5;
+  border-radius: 5px;
+  padding: .05em .35em;
+}
+
+/* ---------- Imágenes y pies de figura ---------- */
+.deck-container .imageblock img,
+.deck-container .image img {
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(15,23,42,.12);
+  background: #fff;
+}
+.deck-container .imageblock .title,
+.deck-container .title {
+  font-size: .72em;
+  color: #64748b;
+  font-style: normal;
+  text-align: center;
+  padding-top: .45em;
+}
+
+/* ---------- Tablas ---------- */
+.deck-container table {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: .85em;
+}
+.deck-container table th {
+  background: var(--cpp-blue);
+  color: #fff;
+  text-align: left;
+  padding: .4em .6em;
+}
+.deck-container table td { padding: .35em .6em; border-top: 1px solid var(--line); }
+.deck-container table tr:nth-child(even) td { background: #f4f8fd; }
+
+/* ---------- Avisos (admonitions de asciidoctor) ---------- */
+.deck-container .admonitionblock {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent-warm);
+  border-radius: 10px;
+  padding: .5em .8em;
+}
+
+/* ---------- Cromo del deck: navegación, estado, índice ---------- */
+.deck-status {
+  font-family: var(--mono);
+  font-size: .5em;
+  color: #7d8da6;
+  right: 18px;
+  bottom: 14px;
+}
+.deck-prev-link, .deck-next-link {
+  background: var(--cpp-blue);
+  color: #fff !important;
+  border-radius: 50%;
+  opacity: .35;
+  transition: opacity .15s ease, transform .15s ease;
+  text-decoration: none !important;
+}
+.deck-prev-link:hover, .deck-next-link:hover { opacity: 1; transform: scale(1.06); }
+
+/* barra de progreso inferior */
+.deck-container:after {
+  content: "";
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--cpp-blue) 0%, var(--accent) 100%);
+  opacity: .85;
+}
+
+/* ---------- Pantallas pequeñas ---------- */
+@media (max-width: 900px) {
+  .deck-container { font-size: 1.15em; }
+  .deck-container > .slide { padding: 18px 22px 60px 22px; }
+}
+
+/* diagramas ASCII: fuente con caracteres de dibujo de cajas */
+.deck-container pre.ascii-diagram {
+  font-family: Consolas, "DejaVu Sans Mono", "Courier New", monospace;
+  font-variant-ligatures: none;
+  line-height: 1.25;
+}
