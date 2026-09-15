@@ -66,13 +66,12 @@ int main()
               │                     │
         ┌─────▼─────┐         ┌─────▼─────┐
         │  Node 2   │         │  Node 3   │
-        │ parent=1  │◄──┐     │ parent=1  │◄──┐
-        └─────┬─────┘   │     └───────────┘   │
-   children → │         │                     │
-        ┌─────▼─────┐   │  parent              │  parent
-        │  Node 4   │   │  apunta              │  apunta
-        │ parent=2  │───┘  a Node 2            │  a Node 1
-        └───────────┘                          │
-              │                                │
-              └── parent apunta a Node 2 ──────┘
+        │ parent=1  │◄──┐     │ parent=1  │
+        └─────┬─────┘   │     └───────────┘
+   children → │         │                  
+        ┌─────▼─────┐   │  parent              
+        │  Node 4   │   │  apunta              
+        │ parent=2  │───┘  a Node 2            
+        └───────────┘                          
+             
 */
